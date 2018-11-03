@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Multiplication Table Generator</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="mtablegenerator.css">
+	<script>
+		function slide(){
+			document.getElementById('input_area').style.display='block';
+		}
+		
+		function generate()
+		{	
+			function sound(){
+			newTone= new Audio();
+			newTone.src="tone.mp3";
+			newTone.play();
+		}
+			if (select.value=="Multiplication"){
+			var bb = "";
+			var result = 0;
+			b=block.value;
+			l = line.value;
+			f=from.value;
+
+			bb += "<table border=1 valign='top' align='center' style='margin-top:20px' width='auto'><tr>";
+			for(var i=1;i<=b;i++)
+			{
+				bb += "<td>";
+				bb += i+" Times"  + "<br>";
+				bb += "<table border=0 align='left'>";
+				for(v=1;v<=l;v++)
+				{
+					result = i * v;
+					bb +="<tr><td>" + i + " X "+ v +" = "+ result+ "</td></tr>";
+
+				
+				}
+				bb += "</table></td>";
+			}
+
+			bb += "</tr></table>";
+			body.innerHTML = bb;
+			document.getElementById('prompt').style.display="none";
+		}
+			
+		if (select.value=="Addition"){
+			var bb = "";
+			var result = 0;
+			b=block.value;
+			l = line.value;
+			f=from.value;
+
+			bb += "<table border=1 valign='top' align='center' style='margin-top:20px'><tr>";
+			for(var i=1;i<=b;i++)
+			{
+				bb += "<td>";
+				bb += i + "<br>";
+				bb += "<table border=0 align='left'>";
+				for(v=1;v<=l;v++)
+				{
+					result = i + v;
+					bb +="<tr><td>" + i + " + "+ v +" = "+ result+ "</td></tr>";
+
+				
+				}
+				bb += "</table></td>";
+			}
+
+			bb += "</tr></table>";
+			body.innerHTML = bb;
+			document.getElementById('prompt').style.display="none";
+		}
+			
+	if (select.value=="Division"){
+			var bb = "";
+			var result = 0;
+			b=block.value;
+			l = line.value;
+			f=from.value;
+
+			bb += "<table border=1 valign='top' align='center' style='margin-top:20px'><tr>";
+			for(var i=1;i<=b;i++)
+			{
+				bb += "<td>";
+				bb += i + "<br>";
+				bb += "<table border=0 align='left'>";
+				for(v=1;v<=l;v++)
+				{
+					result = i / v;
+					bb +="<tr><td>" + i + " / "+ v +" = "+ result+ "</td></tr>";
+
+				
+				}
+				bb += "</table></td>";
+			}
+
+			bb += "</tr></table>";
+			body.innerHTML = bb;
+			document.getElementById('prompt').style.display="none";
+		}
+		if (select.value=="Subtraction"){
+			var bb = "";
+			var result = 0;
+			b=block.value;
+			l = line.value;
+			f=from.value;
+
+			bb += "<table border=1 valign='top' align='center' style='margin-top:20px'><tr>";
+			for(var i=1;i<=b;i++)
+			{
+				bb += "<td>";
+				bb += i + "<br>";
+				bb += "<table border=0 align='left'>";
+				for(v=1;v<=l;v++)
+				{
+					result = i - v;
+					bb +="<tr><td>" + i + " - "+ v +" = "+ result+ "</td></tr>";
+
+				
+				}
+				bb += "</table></td>";
+			}
+
+			bb += "</tr></table>";
+			body.innerHTML = bb;
+			document.getElementById('prompt').style.display="none";
+		}
+		if (select.value=="Operation"){
+			sound();
+			if (confirm("Please select an operation")){
+
+				newTone.pause();
+			}
+		}
+			
+		}function open_generator(){
+			document.getElementById('prompt').style.display="block";
+		}
+
+	</script>
+</head>
+<body>
+	<button onclick="open_generator()" id="ng">Generate New Table</button>
+	<div id="body"></div>
+	<div id="prompt">
+		<div id="input_area" onload="slide()">
+			<table align="center">
+				<tr><td align="center"><div id="loader"></div></td></tr>
+				<tr>
+					<td align="center">Number of Blocks:</td>
+				</tr>
+				<tr>
+					<td align="center"><input type="text" name="" id="block" required></td>
+				</tr>
+				<tr>
+					<td align="center">Number of Lines:</td>
+				</tr>
+				<tr>
+					<td align="center"><input type="text" name="" id="line" required></td>
+				</tr>
+				<tr>
+					<td align="center">Start From:</td>
+				</tr>
+				<tr>
+					<td align="center" ><input type="text" name="" id="from" disabled style="cursor: not-allowed;" placeholder="Start From" required></td>
+				</tr>
+				<tr>
+					<td align="center">Select Operation:</td>
+				</tr>
+				<tr>
+					<td align="center">
+						<select id="select">
+							<option selected="selected">Operation</option>
+							<option>Addition</option>
+							<option>Subtraction</option>
+							<option>Division</option>
+							<option>Multiplication</option>
+
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td align="center"><button onclick="generate()">Generate</button></td>
+				</tr>
+				<tr>Powered by Favour</tr>
+			</table>
+		</div>
+	</div>
+	<div id="table_area">
+
+	</div>
+
+</body>
+</html>
