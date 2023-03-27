@@ -14,13 +14,21 @@ body{
 	padding:  10% 38%;
 	opacity: 1;
 }
+.add-img{
+	width: 12%;
+	background-color: black;
+	margin-left: 239px;
+	margin-bottom: -40px;
+	}
 #input_area{
 	opacity: 1 !important;
+	
 	width: 300px;
-	background: #B20000;
+	background: rgb(24, 100, 24);
 	color: white;
 	font-family: segoe UI;
 	padding: 10px 0 10px 5px;
+
 }
 input[type="text"]{
 	opacity: 1;
@@ -30,6 +38,7 @@ input[type="text"]{
 	width: 200px;
 	text-align: center;
 	font-size: 18pt;
+	outline: none;
 }
 /*#table_area{
 	margin-top: 20px;
@@ -51,13 +60,13 @@ button{
 	height: 50px;
 	font-size: 20pt;
 	background-color: white;
-	color: #B20000;
+	color:  rgb(24, 100, 24);
 	border-style: none;
 	border-radius: 10px;
 	transition: 1s;
 }
 button:hover{
-	background: red;
+background-color: rgb(27, 182, 27)
 	color: white;
 }
 #ng{
