@@ -66,8 +66,8 @@ button{
 	transition: 1s;
 }
 button:hover{
-background-color: rgb(27, 182, 27)
-	color: white;
+background-color: rgb(27, 182, 27);
+color: white;
 }
 #ng{
 	height: 30px;
